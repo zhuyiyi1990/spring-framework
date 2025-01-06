@@ -1,4 +1,4 @@
-package com.mashibing.entity;
+package com.mashibing.hello.entity;
 
 public class User {
 
