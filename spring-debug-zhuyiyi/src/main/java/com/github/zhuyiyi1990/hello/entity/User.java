@@ -1,4 +1,4 @@
-package com.mashibing.hello.entity;
+package com.github.zhuyiyi1990.hello.entity;
 
 public class User {
 
