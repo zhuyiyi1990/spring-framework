@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student" class="com.github.zhuyiyi1990.self_converter.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="连鹏举"></property>
+		<property name="address" value="河北省_邯郸市_武安市"></property>
+	</bean>
+
+	<bean id="studentConverter" class="com.github.zhuyiyi1990.self_converter.StudentConverter"></bean>
+
+	<bean id="addressConverter" class="com.github.zhuyiyi1990.self_converter.AddressConverter"></bean>
+
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<ref bean="studentConverter"></ref>
+				<ref bean="addressConverter"></ref>
+			</set>
+		</property>
+	</bean>
+
+</beans>

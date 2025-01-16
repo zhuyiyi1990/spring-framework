@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:zhuyiyi="http://zhuyiyi1990.github.com/schema/zhuyiyi"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://zhuyiyi1990.github.com/schema/zhuyiyi http://zhuyiyi1990.github.com/schema/zhuyiyi.xsd">
+
+	<zhuyiyi:user id="beanName" name="alias0,alias1,alias2" username="zhuyiyi1" email="zhuyiyi1990@outlook.com"/>
+	<zhuyiyi:user name="alias3,alias4,alias5" username="zhuyiyi2" email="481850737@qq.com"/>
+
+</beans>
