@@ -1,4 +1,4 @@
-package com.github.zhuyiyi1990.hello.entity;
+package com.github.zhuyiyi1990.hello;
 
 public class User {
 
