@@ -9,6 +9,9 @@ public class A {
 	@Autowired
 	private B b;
 
+	public A() {
+	}
+
 	public B getB() {
 		return b;
 	}
