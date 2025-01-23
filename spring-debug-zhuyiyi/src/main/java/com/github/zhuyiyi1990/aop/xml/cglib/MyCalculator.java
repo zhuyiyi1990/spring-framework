@@ -2,6 +2,9 @@ package com.github.zhuyiyi1990.aop.xml.cglib;
 
 public class MyCalculator {
 
+	public MyCalculator() {
+	}
+
 	public int add(int i, int j) {
 		return i + j;
 	}

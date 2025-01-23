@@ -2,6 +2,9 @@ package com.github.zhuyiyi1990.aop.xml.jdk;
 
 public class MySecondCalculator implements Calculator {
 
+	public MySecondCalculator() {
+	}
+
 	@Override
 	public int add(int i, int j) {
 		return i + j;

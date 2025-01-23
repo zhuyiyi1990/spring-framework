@@ -8,6 +8,9 @@ import java.util.Arrays;
 
 public class LogAspect {
 
+	public LogAspect() {
+	}
+
 	private void start(JoinPoint joinPoint) {
 		//获取方法签名
 		Signature signature = joinPoint.getSignature();
