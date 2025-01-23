@@ -11,14 +11,14 @@
 
 	<bean id="myCalculator" class="com.github.zhuyiyi1990.aop.xml.jdk.MyCalculator"></bean>
 
-	<bean id="mySecondCalculator" class="com.github.zhuyiyi1990.aop.xml.jdk.MySecondCalculator"></bean>
+	<bean id="mySecondCalculator" class="com.github.zhuyiyi1990.aop.xml.cglib.MySecondCalculator"></bean>
 
 	<aop:config>
 		<aop:aspect ref="logAspect">
 			<aop:pointcut id="myPoint"
 						  expression="execution(int com.github.zhuyiyi1990.aop.xml.jdk.MyCalculator.*(..))"/>
 			<aop:pointcut id="mySecondPoint"
-						  expression="execution(int com.github.zhuyiyi1990.aop.xml.jdk.MySecondCalculator.*(..))"/>
+						  expression="execution(int com.github.zhuyiyi1990.aop.xml.cglib.MySecondCalculator.*(..))"/>
 			<aop:before method="start" pointcut-ref="myPoint"></aop:before>
 			<aop:after method="logFinally" pointcut-ref="myPoint"></aop:after>
 			<aop:after-returning method="stop" pointcut-ref="myPoint" returning="result"></aop:after-returning>
