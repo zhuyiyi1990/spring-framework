@@ -33,6 +33,8 @@ dependencies {
     // compile('org.springframework:spring-aspectj:5.2.9')
     compile("org.aspectj:aspectjweaver:1.9.6")
     compile(project(":spring-aop"))
+    compile("com.alibaba:druid:1.2.4")
+    compile("mysql:mysql-connector-java:8.0.33")
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

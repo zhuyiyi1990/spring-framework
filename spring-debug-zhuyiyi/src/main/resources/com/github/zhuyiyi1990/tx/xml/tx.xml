@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+						   http://www.springframework.org/schema/beans/spring-beans.xsd
+	                       http://www.springframework.org/schema/context
+	                       https://www.springframework.org/schema/context/spring-context.xsd
+	                       http://www.springframework.org/schema/aop
+	                       https://www.springframework.org/schema/aop/spring-aop.xsd
+	                       http://www.springframework.org/schema/tx
+	                       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+				  value="jdbc:mysql://10.44.1.65:3306/gdyf03_db?useSSL=false&amp;serverTimezone=UTC"></property>
+		<property name="username" value="zhuyy"></property>
+		<property name="password" value="operzTYT2024qwer"></property>
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="bookDAO" class="com.github.zhuyiyi1990.tx.xml.BookDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="bookService" class="com.github.zhuyiyi1990.tx.xml.BookService">
+		<property name="bookDAO" ref="bookDAO"></property>
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="txPoint" expression="execution(* com.github.zhuyiyi1990.tx.xml.BookService.*(..))"/>
+		<aop:advisor advice-ref="myAdvice" pointcut-ref="txPoint"></aop:advisor>
+	</aop:config>
+
+	<tx:advice id="myAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="checkout" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+
+</beans>

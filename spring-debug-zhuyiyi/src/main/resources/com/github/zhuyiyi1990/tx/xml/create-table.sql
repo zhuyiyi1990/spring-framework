@@ -1,0 +1,13 @@
+CREATE TABLE `book` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR ( 255 ) COLLATE utf8mb4_general_ci DEFAULT NULL,
+`price` DECIMAL ( 10, 2 ) DEFAULT NULL,
+`stock` INT DEFAULT NULL,
+PRIMARY KEY ( `id` )
+) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+CREATE TABLE `account` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`username` VARCHAR ( 255 ) COLLATE utf8mb4_general_ci DEFAULT NULL,
+`balance` DECIMAL ( 10, 2 ) DEFAULT NULL,
+PRIMARY KEY ( `id` )
+) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
