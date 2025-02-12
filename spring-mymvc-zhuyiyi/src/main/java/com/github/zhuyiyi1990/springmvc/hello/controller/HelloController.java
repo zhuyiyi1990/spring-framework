@@ -1,4 +1,4 @@
-package com.github.zhuyiyi1990.hello.controller;
+package com.github.zhuyiyi1990.springmvc.hello.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
