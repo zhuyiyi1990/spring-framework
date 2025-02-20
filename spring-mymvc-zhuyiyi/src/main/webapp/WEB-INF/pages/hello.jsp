@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-欢迎加入马士兵教育
+欢迎加入马士兵教育<br>
 ${hello}
 </body>
 </html>

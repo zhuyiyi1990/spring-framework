@@ -15,6 +15,9 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
+	<bean id="/beanNameUrlHandlerMapping"
+		  class="com.github.zhuyiyi1990.springmvc.controller.BeanNameUrlHandlerMappingController"/>
+
 	<!--配置视图解析器对象-->
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/"/>
