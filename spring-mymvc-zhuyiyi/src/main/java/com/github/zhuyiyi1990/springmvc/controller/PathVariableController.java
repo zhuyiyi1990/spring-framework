@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/pathVariable")
 public class PathVariableController {
 
-	@GetMapping("/testPathVariable/{id}/{name}")
-	public String testPathVariable(@PathVariable("id") Integer id, @PathVariable("name") String name) {
-		System.out.println(id);
-		System.out.println(name);
-		return "hello";
-	}
+    @GetMapping("/test/{id}/{name}")
+    public String test(@PathVariable("id") Integer id, @PathVariable("name") String name) {
+        System.out.println(id);
+        System.out.println(name);
+        return "hello";
+    }
 
 }
