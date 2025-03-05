@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/forward")
 public class ForwardController {
 
-	@RequestMapping("/forward")
-	public String forward() {
-		System.out.println("forward");
-		return "forward:/index.jsp";
-	}
+    @RequestMapping("/forward")
+    public String forward() {
+        System.out.println("forward");
+        return "forward:/index.jsp";
+    }
 
-	@RequestMapping("/forward2")
-	public String forward2() {
-		System.out.println("forward2");
-		return "forward:/forward";
-	}
+    @RequestMapping("/forward2")
+    public String forward2() {
+        System.out.println("forward2");
+        return "forward:/forward/forward";
+    }
 
 }
