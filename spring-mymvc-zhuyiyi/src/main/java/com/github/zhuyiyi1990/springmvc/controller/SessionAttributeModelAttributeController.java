@@ -33,9 +33,11 @@ public class SessionAttributeModelAttributeController {
 	}
 
 	@RequestMapping("/test")
-	public String update(@ModelAttribute("user") User user,
-						 @ModelAttribute("user2") User user2,
-						 HttpServletRequest request) {
+	public String test(@ModelAttribute("user") User user,
+					   @ModelAttribute("user2") User user2,
+					   HttpServletRequest request) {
+		System.out.println("user = " + user);
+		System.out.println("user2 = " + user2);
 		HttpSession session = request.getSession();
 		Enumeration<String> attributeNames = session.getAttributeNames();
 		while (attributeNames.hasMoreElements()) {
@@ -43,6 +45,7 @@ public class SessionAttributeModelAttributeController {
 			System.out.println(s);
 		}
 		User sessionUser = (User) session.getAttribute("user");
+		System.out.println("sessionUser = " + sessionUser);
 		System.out.println(user == sessionUser);
 		return "success";
 	}
