@@ -1,10 +1,23 @@
 package com.github.zhuyiyi1990.springmvc.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
 public class User {
 
 	private Integer id;
 
 	private String name;
+
+	private String password;
+
+	private Integer age;
+
+	private Date birthday1;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date birthday2;
 
 	public User() {
 	}
@@ -25,11 +38,47 @@ public class User {
 		this.name = name;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Date getBirthday1() {
+		return birthday1;
+	}
+
+	public void setBirthday1(Date birthday1) {
+		this.birthday1 = birthday1;
+	}
+
+	public Date getBirthday2() {
+		return birthday2;
+	}
+
+	public void setBirthday2(Date birthday2) {
+		this.birthday2 = birthday2;
+	}
+
 	@Override
 	public String toString() {
 		return super.toString() + "{" +
 				"id=" + id +
 				", name='" + name + '\'' +
+				", password='" + password + '\'' +
+				", age=" + age +
+				", birthday1=" + birthday1 +
+				", birthday2=" + birthday2 +
 				'}';
 	}
 
