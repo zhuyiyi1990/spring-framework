@@ -30,6 +30,16 @@
 	<mvc:resources mapping="/images/**" location="/images/"/>
 
 	<!--开启SpringMVC注解支持-->
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven conversion-service="conversionService"/>
+
+	<bean id="myConverter" class="com.github.zhuyiyi1990.springmvc.converter.MyConverter"/>
+
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<ref bean="myConverter"/>
+			</set>
+		</property>
+	</bean>
 
 </beans>
