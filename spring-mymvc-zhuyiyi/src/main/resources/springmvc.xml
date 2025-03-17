@@ -32,6 +32,8 @@
 	<!--开启SpringMVC注解支持-->
 	<mvc:annotation-driven conversion-service="conversionService"/>
 
+	<mvc:default-servlet-handler/>
+
 	<bean id="myConverter" class="com.github.zhuyiyi1990.springmvc.converter.MyConverter"/>
 
 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
@@ -41,5 +43,12 @@
 			</set>
 		</property>
 	</bean>
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/interceptor/*"/>
+			<bean class="com.github.zhuyiyi1990.springmvc.interceptor.MyInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 </beans>
