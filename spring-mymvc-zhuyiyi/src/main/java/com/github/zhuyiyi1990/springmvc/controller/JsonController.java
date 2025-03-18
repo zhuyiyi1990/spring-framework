@@ -36,9 +36,10 @@ public class JsonController {
 	}
 
 	@RequestMapping("/testRequestJson")
-	public String testRequestJson(@RequestBody User user) {
+	@ResponseBody
+	public User testRequestJson(@RequestBody User user) {
 		System.out.println(user);
-		return "success";
+		return user;
 	}
 
 }
