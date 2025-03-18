@@ -14,12 +14,21 @@ public class User {
 
 	private Integer age;
 
+	private String gender;
+
 	private Date birthday1;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birthday2;
 
 	public User() {
+	}
+
+	public User(Integer id, String name, Integer age, String gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
 	}
 
 	public Integer getId() {
@@ -54,6 +63,14 @@ public class User {
 		this.age = age;
 	}
 
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	public Date getBirthday1() {
 		return birthday1;
 	}
@@ -77,6 +94,7 @@ public class User {
 				", name='" + name + '\'' +
 				", password='" + password + '\'' +
 				", age=" + age +
+				", gender='" + gender + '\'' +
 				", birthday1=" + birthday1 +
 				", birthday2=" + birthday2 +
 				'}';
