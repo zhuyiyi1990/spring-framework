@@ -46,7 +46,7 @@ public class ValidationController {
 				System.out.println(fieldError.getDefaultMessage());
 			}
 			model.addAttribute("errors", map);
-			return "forward:/register.jsp";
+			return "forward:/testValidationController.jsp";
 		} else {
 			System.out.println("登陆成功");
 			return "success";
