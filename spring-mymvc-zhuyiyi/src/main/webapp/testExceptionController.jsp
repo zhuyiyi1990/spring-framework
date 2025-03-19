@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>testExceptionController</title>
+    <title>测试ExceptionController</title>
 </head>
 <%
     pageContext.setAttribute("contextPath",request.getContextPath());

@@ -14,9 +14,9 @@ public class BeanNameUrlHandlerMappingController implements Controller {
 		//创建对象
 		ModelAndView mv = new ModelAndView();
 		//添加视图名称，要跳转的页面的名称
-		mv.setViewName("hello");
+		mv.setViewName("success");
 		//向前端页面添加的属性值
-		mv.addObject("hello", "Hello, BeanNameUrlHandlerMapping!");
+		mv.addObject("msg", "Hello, BeanNameUrlHandlerMapping!");
 		return mv;
 	}
 

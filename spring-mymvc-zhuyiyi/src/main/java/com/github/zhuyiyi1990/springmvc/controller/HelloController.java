@@ -9,16 +9,16 @@ import java.util.Map;
 @RequestMapping("/hello")
 public class HelloController {
 
-	@RequestMapping(value = "/test")
-	public String test1(Map<String, String> map) {
-		map.put("hello", "Hello, SpringMVC!");
-		return "hello";
+	@RequestMapping(value = "/hello")
+	public String hello(Map<String, String> map) {
+		map.put("msg", "Hello, SpringMVC!");
+		return "success";
 	}
 
-	@RequestMapping(value = "/test*")
-	public String test2(Map<String, String> map) {
-		map.put("hello", "Hello, everybody!");
-		return "hello";
+	@RequestMapping(value = "/hello*")
+	public String hello2(Map<String, String> map) {
+		map.put("msg", "Hello, everybody!");
+		return "success";
 	}
 
 }
