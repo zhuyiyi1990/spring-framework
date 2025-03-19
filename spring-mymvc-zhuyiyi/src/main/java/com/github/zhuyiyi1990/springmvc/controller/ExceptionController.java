@@ -19,7 +19,7 @@ public class ExceptionController {
 
 	@RequestMapping("/exception1")
 	public String exception() {
-		System.out.println(this.getClass().getName());
+		System.out.println("exception1");
 		int i = 0;
 		i = 10 / i;
 		return "success";
@@ -48,13 +48,13 @@ public class ExceptionController {
 
 	@RequestMapping(value = "/exception4", method = RequestMethod.POST)
 	public String exception4() {
-		System.out.println("exception3");
+		System.out.println("exception4");
 		return "success";
 	}
 
 	@ExceptionHandler(value = {ArithmeticException.class})
 	public ModelAndView handlerException(Exception exception) {
-		System.out.println("exception1");
+		System.out.println("handlerException1");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("error");
 		mv.addObject("exce", exception);
@@ -63,7 +63,7 @@ public class ExceptionController {
 
 	@ExceptionHandler(value = {NullPointerException.class})
 	public ModelAndView handlerException2(Exception exception) {
-		System.out.println("exception2");
+		System.out.println("handlerException2");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("error");
 		mv.addObject("exce", exception);

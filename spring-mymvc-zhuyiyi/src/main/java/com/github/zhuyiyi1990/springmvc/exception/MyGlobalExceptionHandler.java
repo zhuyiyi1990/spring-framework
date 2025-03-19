@@ -9,7 +9,7 @@ public class MyGlobalExceptionHandler {
 
 	@ExceptionHandler(value = {UsernameException.class})
 	public ModelAndView handlerException(Exception exception) {
-		System.out.println("global-------exception1");
+		System.out.println("global-------handlerException1");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("error");
 		mv.addObject("exce", exception);
@@ -18,7 +18,7 @@ public class MyGlobalExceptionHandler {
 
 	@ExceptionHandler(value = {Exception.class})
 	public ModelAndView handlerException2(Exception exception) {
-		System.out.println("global-------exception2");
+		System.out.println("global-------handlerException2");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("error");
 		mv.addObject("exce", exception);
