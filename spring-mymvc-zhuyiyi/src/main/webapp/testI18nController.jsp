@@ -14,7 +14,7 @@
     <form action="#" method="post">
         <fmt:message key="username"></fmt:message>:<input type="text" name="username"><br>
         <fmt:message key="password"></fmt:message>:<input type="text" name="password"><br>
-        <input type="submit" value="<fmt:message key="btn"/>"/>
+        <input type="submit" value="<fmt:message key='btn'/>"/>
     </form>
     <a href="${contextPath}/i18n/i18nLocaleChange?locale=zh_CN">中文</a><br>
     <a href="${contextPath}/i18n/i18nLocaleChange?locale=en_US">英文</a><br>
