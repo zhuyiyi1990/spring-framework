@@ -23,6 +23,7 @@
     <a href="${contextPath}/testInterceptorController.jsp">测试InterceptorController</a><br>
     <a href="${contextPath}/testJsonController.jsp">测试JsonController</a><br>
     <a href="${contextPath}/testUploadController.jsp">测试UploadController</a><br>
-    <a href="${contextPath}/testExceptionController.jsp">测试ExceptionController</a>
+    <a href="${contextPath}/testExceptionController.jsp">测试ExceptionController</a><br>
+    <a href="${contextPath}/testI18nController.jsp">测试I18nController</a><br>
 </body>
 </html>

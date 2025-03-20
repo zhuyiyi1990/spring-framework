@@ -45,6 +45,7 @@
 	</bean>
 
 	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
 		<mvc:interceptor>
 			<mvc:mapping path="/interceptor/*"/>
 			<bean class="com.github.zhuyiyi1990.springmvc.interceptor.MyInterceptor"/>
@@ -55,5 +56,11 @@
 		<property name="defaultEncoding" value="UTF-8"/>
 		<property name="maxUploadSize" value="1024000"/>
 	</bean>
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="login"/>
+	</bean>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
 
 </beans>
