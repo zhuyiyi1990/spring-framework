@@ -50,6 +50,10 @@
 			<mvc:mapping path="/interceptor/*"/>
 			<bean class="com.github.zhuyiyi1990.springmvc.interceptor.MyInterceptor"/>
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/interceptor/*"/>
+			<bean class="com.github.zhuyiyi1990.springmvc.interceptor.MySecondInterceptor"/>
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

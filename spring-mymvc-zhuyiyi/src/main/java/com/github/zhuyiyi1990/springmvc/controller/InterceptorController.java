@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/interceptor")
 public class InterceptorController {
 
-	@RequestMapping("/test")
-	public String test() {
+	@RequestMapping("/testInterceptor")
+	public String testInterceptor() {
 		// int i = 1 / 0;
 		System.out.println(this.getClass().getName());
 		return "success";
