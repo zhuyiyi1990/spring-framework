@@ -18,7 +18,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Student{" +
+		return "Book{" +
 				"name='" + name + '\'' +
 				'}';
 	}
