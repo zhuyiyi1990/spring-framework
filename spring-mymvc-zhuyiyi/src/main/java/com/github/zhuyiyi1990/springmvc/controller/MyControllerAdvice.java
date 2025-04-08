@@ -11,7 +11,7 @@ import java.util.Map;
 @ControllerAdvice
 public class MyControllerAdvice {
 
-	@ModelAttribute(name = "ca")
+	@ModelAttribute(name = "ma")
 	public Map<String, Object> myData() {
 		Map<String, Object> map = new HashMap<>();
 		map.put("age", 99);
@@ -19,9 +19,9 @@ public class MyControllerAdvice {
 		return map;
 	}
 
-	@InitBinder("a")
-	public void a(WebDataBinder binder) {
-		binder.setFieldDefaultPrefix("a.");
+	@InitBinder("book")
+	public void customizeBinding(WebDataBinder binder) {
+		binder.setFieldDefaultPrefix("b.");
 	}
 
 }
