@@ -19,7 +19,7 @@ import java.util.Map;
 public class SessionAttributeModelAttributeInitBinderController {
 
 	@ModelAttribute
-	public void testModelAttribute(Model model) {
+	public void createUser(Model model) {
 		User user = new User();
 		user.setId(1);
 		user.setName("张三");
@@ -27,7 +27,7 @@ public class SessionAttributeModelAttributeInitBinderController {
 	}
 
 	@ModelAttribute("user2")
-	public User testModelAttribute2() {
+	public User createUser2() {
 		User user = new User();
 		user.setId(2);
 		user.setName("李四");

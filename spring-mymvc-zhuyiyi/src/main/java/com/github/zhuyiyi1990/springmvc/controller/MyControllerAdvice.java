@@ -12,7 +12,7 @@ import java.util.Map;
 public class MyControllerAdvice {
 
 	@ModelAttribute(name = "ma")
-	public Map<String, Object> myData() {
+	public Map<String, Object> createMap() {
 		Map<String, Object> map = new HashMap<>();
 		map.put("age", 99);
 		map.put("gender", "男");
