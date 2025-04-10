@@ -1,20 +1,22 @@
 package com.github.zhuyiyi1990.springmvc.controller;
 
+import com.github.zhuyiyi1990.springmvc.bean.Book;
+import com.github.zhuyiyi1990.springmvc.bean.Student;
 import com.github.zhuyiyi1990.springmvc.bean.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Enumeration;
+import java.util.Map;
 
 @Controller
-@RequestMapping("/sessionAttributeModelAttribute")
+@RequestMapping("/sessionAttributeModelAttributeInitBinder")
 @SessionAttributes("user")
-public class SessionAttributeModelAttributeController {
+public class SessionAttributeModelAttributeInitBinderController {
 
 	@ModelAttribute
 	public void testModelAttribute(Model model) {
@@ -32,10 +34,15 @@ public class SessionAttributeModelAttributeController {
 		return user;
 	}
 
-	@RequestMapping("/test")
-	public String test(@ModelAttribute("user") User user,
-					   @ModelAttribute("user2") User user2,
-					   HttpServletRequest request) {
+	@InitBinder("student")
+	public void customizeBinding(WebDataBinder binder) {
+		binder.setFieldDefaultPrefix("s.");
+	}
+
+	@RequestMapping("/testSessionAttribute")
+	public String testSessionAttribute(@ModelAttribute("user") User user,
+									   @ModelAttribute("user2") User user2,
+									   HttpServletRequest request) {
 		System.out.println("user = " + user);
 		System.out.println("user2 = " + user2);
 		HttpSession session = request.getSession();
@@ -47,6 +54,14 @@ public class SessionAttributeModelAttributeController {
 		User sessionUser = (User) session.getAttribute("user");
 		System.out.println("sessionUser = " + sessionUser);
 		System.out.println(user == sessionUser);
+		return "success";
+	}
+
+	@GetMapping("/testModelAttributeInitBinder")
+	public String testModelAttributeInitBinder(Book book, Student student, @ModelAttribute("ma") Map<String, Object> map) {
+		System.out.println("book = " + book);
+		System.out.println("student = " + student);
+		System.out.println("map = " + map);
 		return "success";
 	}
 

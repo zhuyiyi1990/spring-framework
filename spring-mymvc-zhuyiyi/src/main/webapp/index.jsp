@@ -13,7 +13,7 @@
     <a href="${contextPath}/testPathVariableController.jsp">测试PathVariableController</a><br>
     <a href="${contextPath}/testRedirectForwardController.jsp">测试RedirectForwardController</a><br>
     <a href="${contextPath}/testModelMapController.jsp">测试ModelMapController</a><br>
-    <a href="${contextPath}/testSessionAttributeModelAttributeController.jsp">测试SessionAttributeModelAttributeController</a><br>
+    <a href="${contextPath}/testSessionAttributeModelAttributeInitBinderController.jsp">测试SessionAttributeModelAttributeInitBinderController</a><br>
     <a href="${contextPath}/testDateConverterController.jsp">测试DateConverterController</a><br>
     <a href="${contextPath}/testMyConverterController.jsp">测试MyConverterController</a><br>
     <a href="${contextPath}/testValidationController.jsp">测试ValidationController</a><br>
@@ -26,6 +26,5 @@
     <a href="${contextPath}/testExceptionController.jsp">测试ExceptionController</a><br>
     <a href="${contextPath}/testI18nController.jsp">测试I18nController</a><br>
     <a href="${contextPath}/testAsyncController.jsp">测试AsyncController</a><br>
-    <a href="${contextPath}/testInitBinderController.jsp">测试InitBinderController</a><br>
 </body>
 </html>
