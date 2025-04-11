@@ -3,6 +3,7 @@ package com.github.zhuyiyi1990.springmvc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -37,10 +38,14 @@ public class FlashMapController {
 	}
 
 	@RequestMapping(value = "/showOrder")
-	public String showOrder(Model model) {
+	public String showOrder(Model model, @RequestParam("location") String location) {
 		System.out.println("orderId=" + model.getAttribute("orderId"));
 		System.out.println("name=" + model.getAttribute("name"));
-		System.out.println("location=" + model.getAttribute("location"));
+		System.out.println("location from ModelMap=" + model.getAttribute("location"));
+		System.out.println("location from URL=" + location);
+		if (!model.containsAttribute("location")) {
+			model.addAttribute("location", location);
+		}
 		return "order";
 	}
 
