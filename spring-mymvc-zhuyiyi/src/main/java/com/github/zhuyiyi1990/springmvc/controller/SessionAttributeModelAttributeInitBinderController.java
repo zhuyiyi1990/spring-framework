@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -54,6 +55,12 @@ public class SessionAttributeModelAttributeInitBinderController {
 		User sessionUser = (User) session.getAttribute("user");
 		System.out.println("sessionUser = " + sessionUser);
 		System.out.println(user == sessionUser);
+		return "success";
+	}
+
+	@RequestMapping("/testSessionComplete")
+	public String testSessionAttribute(SessionStatus sessionStatus) {
+		sessionStatus.setComplete();
 		return "success";
 	}
 
