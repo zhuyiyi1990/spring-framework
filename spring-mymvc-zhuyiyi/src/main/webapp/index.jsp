@@ -27,5 +27,6 @@
     <a href="${contextPath}/testI18nController.jsp">测试I18nController</a><br>
     <a href="${contextPath}/testAsyncController.jsp">测试AsyncController</a><br>
     <a href="${contextPath}/testResponseBodyAdviceController.jsp">测试ResponseBodyAdviceController</a><br>
+    <a href="${contextPath}/testFlashMapController.jsp">测试FlashMapController</a><br>
 </body>
 </html>
