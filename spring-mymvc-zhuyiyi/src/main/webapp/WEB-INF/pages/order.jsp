@@ -6,6 +6,6 @@
 <body>
 订单id: ${orderId}<br>
 用户名: ${name}<br>
-地点: ${local}<br>
+地点: ${location}<br>
 </body>
 </html>

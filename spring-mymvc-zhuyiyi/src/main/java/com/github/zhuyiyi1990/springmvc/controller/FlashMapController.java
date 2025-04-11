@@ -28,9 +28,9 @@ public class FlashMapController {
 		// 获取flashmap中的值
 		HttpServletRequest request = ((ServletRequestAttributes) (RequestContextHolder.getRequestAttributes())).getRequest();
 		FlashMap outputFlashMap = RequestContextUtils.getOutputFlashMap(request);
-		System.out.println(outputFlashMap.get("name"));
-		System.out.println(outputFlashMap.get("orderId"));
-		System.out.println(outputFlashMap.get("location"));
+		System.out.println("orderId=" + outputFlashMap.get("orderId"));
+		System.out.println("name=" + outputFlashMap.get("name"));
+		System.out.println("location=" + outputFlashMap.get("location"));
 		Object attribute = request.getAttribute(DispatcherServlet.OUTPUT_FLASH_MAP_ATTRIBUTE);
 		System.out.println(attribute);
 		return "redirect:/flashMap/showOrder";
@@ -38,9 +38,9 @@ public class FlashMapController {
 
 	@RequestMapping(value = "/showOrder")
 	public String showOrder(Model model) {
-		System.out.println(model.getAttribute("name"));
-		System.out.println(model.getAttribute("orderId"));
-		System.out.println(model.getAttribute("location"));
+		System.out.println("orderId=" + model.getAttribute("orderId"));
+		System.out.println("name=" + model.getAttribute("name"));
+		System.out.println("location=" + model.getAttribute("location"));
 		return "order";
 	}
 
